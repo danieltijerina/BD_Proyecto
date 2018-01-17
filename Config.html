@@ -1,0 +1,270 @@
+  
+  <div id="dontErase"></div>
+
+    <div class="row form-group" autocomplete="off">
+
+      <label class="control-label col-sm-4">Titulo de la aplicación:</label>
+      <div class="col-sm-8">
+        <input id="inTitulo" type="text" class="form-control" value="" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="row form-group" autocomplete="off">
+      <label class="control-label col-sm-4">Servidor:</label>
+      <div class="col-sm-8">
+        <input id="inServ" type="text" class="form-control" value=""  autocomplete="off">
+      </div>
+    </div>
+
+    <div class="row form-group" autocomplete="off">
+      <label class="control-label col-sm-4">Usuario:</label>
+      <div class="col-sm-8">
+        <input id="inUsr" type="text" class="form-control" value=""  autocomplete="off">
+      </div>
+    </div>
+
+  <div class="row form-group" autocomplete="off">
+      <label class="control-label col-sm-4">Contraseña:</label>
+      <div class="col-sm-8">
+        <input id="inPass" type="password" class="form-control" value="" autocomplete="new-password">
+      </div>
+    </div>
+
+     <div class="row form-group" autocomplete="off">
+      <label class="control-label col-sm-4">Nombre de la base de datos:</label>
+      <div class="col-sm-8">
+        <input id="inBD" type="text" class="form-control" value="" autocomplete="off">
+      </div>
+    </div>
+    <div class="form-group" autocomplete="off">
+      <div class="form-vertical">
+        <span class="btn btn-success" id="btnSave" style="display: flex; justify-content: center;">Aplicar cambios</span>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <h3>Tablas</h3>
+    <table class="table table-striped" style="width:100%;">
+        <col width="5%">
+        <col width="15%">
+        <col width="25%">
+        <col width="40%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <thead >
+          <tr>
+            <th>Id</th>
+            <th>Tabla</th>
+            <th>Titulo</th>
+            <th>Query</th>
+            <th>Mostrar</th>
+            <th></th>
+             <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbTablas">
+ 
+        </tbody>
+    </table>
+
+    <hr>
+
+
+
+   <h3>Procedimientos almacenados</h3>
+   <table class="table table-striped" style="width:100%;">
+        <col width="5%">
+        <col width="30%">
+        <col width="40%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <thead >
+          <tr>
+            <th>Id</th>
+            <th>Nombre del procedimiento</th>
+            <th>Titulo</th>
+            <th># de campos</th>
+             <th>Mostrar</th>
+            <th></th>
+
+             <th></th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="tbProcedimeintos">
+          
+      
+        </tbody>
+    </table>
+
+<hr>
+
+    <div class="row form-group" autocomplete="off">
+      <h3 class="control-label col-sm-10">Reportes</h3>
+
+      <div class="col-sm-2">
+         <span class="btn btn-success" style="float: right" id="btnAddReporte"><span class="oi oi-plus"></span></span>
+      </div>
+    </div>
+   <table class="table table-striped" style="width:100%;">
+        <col width="5%">
+        <col width="5%">
+        <col width="30%">
+        <col width="40%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <col width="5%">
+        <thead >
+          <tr>
+             <th></th>
+            <th>Id</th>
+            <th>Nombre del reporte</th>
+            <th>Titulo</th>
+            <th># de campos</th>
+            <th># de procedimientos</th>
+            <th>Mostrar</th>
+            <th></th>
+          <th></th>
+             <th></th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="tbReportes">
+          
+      
+        </tbody>
+    </table>
+
+
+
+
+    <div class="modal fade" id="modalCampos" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <input type="text" id="idReporteCampos" hidden="true"></input>
+          <h4 id="modHead" class="modal-title">Modal Header</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+
+        <div class="modal-body">
+          <p>Campos de entrada</p>
+
+          <div class="row form-group">
+            <label class="control-label col-sm-6">Letrero:</label>
+            <label class="control-label col-sm-4">Tipo:</label>
+          </div>
+
+        <div id="divCampos">
+
+
+        </div>
+
+        </div>
+
+        <div class="modal-footer">
+    
+          <button id="addCampo"  type="pull-left button" class="btn btn-success  mr-auto"><span class="oi oi-plus"></span></button> 
+
+          <button id="btnGuardarCampos" type="button" class="btn btn-success">Guardar</button>
+        </div>
+         </div>
+      </div>
+       </div>
+
+
+
+ <div class="modal fade" id="modalReporte" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar reporte</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+
+        <div class="modal-body">
+
+          <div class="row form-group" autocomplete="off">
+      
+      <label class="control-label col-sm-4">Nombre del reporte:</label>
+      <div class="col-sm-8">
+        <input id="inRepTitulo" type="text" class="form-control" value="" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="row form-group" autocomplete="off">
+      <label class="control-label col-sm-4">Título del reporte:</label>
+      <div class="col-sm-8">
+        <input id="inRepNombre" type="text" class="form-control" value=""  autocomplete="off">
+      </div>
+    </div>
+
+
+        </div>
+        
+        <div class="modal-footer">
+  
+
+          <button id="btnAgregarReporte" type="button" class="btn btn-success">Agregar</button>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+
+
+
+    <div class="modal fade" id="modalReporteProcs" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="modHeadRep" class="modal-title">Modal Header</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+
+        <div class="modal-body">
+          <p>Procedimientos</p>
+
+        <div id="divReps">
+
+
+        </div>
+
+        </div>
+
+        <div class="modal-footer">
+    
+          <button id="addProc"  type="pull-left button" class="btn btn-success  mr-auto"><span class="oi oi-plus"></span></button> 
+
+          <button id="btnGuardarReporteProc" type="button" class="btn btn-success">Guardar</button>
+        </div>
+         </div>
+      </div>
+       </div>
+
+
+
+    <script src="Config.js"></script>

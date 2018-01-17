@@ -1,0 +1,24 @@
+BEGIN;
+
+DELIMITER $$
+CREATE PROCEDURE `SP_GetEmployees`()
+	SELECT * FROM employee
+$$DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE `SP_GetEmployeesSalary`(IN `in_salary` INT)
+	SELECT * FROM employee WHERE salary >= in_salary
+$$DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE `SP_GetDepartments`()
+	SELECT * FROM department
+$$DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE `SP_GetProjects`()
+	SELECT * FROM project
+$$DELIMITER ;
+
+COMMIT;
+x
